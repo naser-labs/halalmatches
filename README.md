@@ -1,5 +1,9 @@
 # HalalMatches
 
+[![Deploy to GitHub Pages](https://github.com/naseruddin25/halalmatches/actions/workflows/deploy.yml/badge.svg)](https://github.com/naseruddin25/halalmatches/actions/workflows/deploy.yml)
+
+**Live Site**: [https://naseruddin25.github.io/halalmatches/](https://naseruddin25.github.io/halalmatches/)
+
 A privacy-first Muslim matrimonial platform built with Islamic principles at its core.
 
 ## Features
@@ -50,11 +54,56 @@ Static files will be generated in the `/out` directory.
 
 ## Deployment
 
-### GitHub Pages
+This site is configured for automatic deployment to GitHub Pages.
 
-1. Push to the `main` branch
-2. GitHub Actions will automatically build and deploy
-3. Configure your custom domain in repository settings
+### Automatic Deployment (Current Setup)
+
+✅ **Already configured!** Every push to `main` automatically:
+1. Builds the Next.js static export (`npm run build`)
+2. Deploys to GitHub Pages
+3. Makes the site live at: https://naseruddin25.github.io/halalmatches/
+
+**To deploy:**
+```bash
+git add .
+git commit -m "Your changes"
+git push origin main
+```
+
+Check deployment status in the **Actions** tab on GitHub.
+
+### First-Time Setup
+
+If GitHub Pages isn't enabled yet:
+1. Go to repository **Settings** > **Pages**
+2. Under "Build and deployment":
+   - Source: **GitHub Actions**
+3. Save and wait for the first deployment to complete
+
+### Manual Deployment (Alternative)
+
+```bash
+# Build the site
+npm run build
+
+# The out/ folder contains the static site
+# Deploy the contents of out/ to your hosting provider
+```
+
+### Local Testing
+
+Test the production build locally:
+```bash
+# Build the site
+npm run build
+
+# Serve the static files
+python -m http.server 8000 --directory out
+# OR
+npx serve out
+
+# Visit http://localhost:8000/halalmatches/
+```
 
 ### Custom Domain Setup (GoDaddy)
 

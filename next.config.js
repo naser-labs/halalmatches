@@ -5,9 +5,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages deployment
-  basePath: process.env.NODE_ENV === 'production' ? '' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  // For GitHub Pages deployment at username.github.io/repo-name
+  basePath: '/halalmatches',
+  assetPrefix: '/halalmatches',
 }
 
 module.exports = nextConfig
