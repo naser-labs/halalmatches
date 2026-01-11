@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HalalMatches - Redirecting...</title>
+    <script type="text/javascript">
+      // SPA redirect for client-side routing
+      // When a 404 occurs, redirect to index.html to let Next.js handle routing
+      var pathname = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      // Preserve the full path for Next.js router to handle
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.host + '/?redirect=' + 
+        encodeURIComponent(pathname + search + hash)
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to home page...</p>
+  </body>
+</html>
