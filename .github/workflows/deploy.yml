@@ -32,6 +32,22 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Verify build output
+        run: |
+          echo "Checking build output directory..."
+          ls -la out/
+          if [ ! -f "out/index.html" ]; then
+            echo "ERROR: index.html not found in out directory"
+            exit 1
+          fi
+          if [ ! -f "out/CNAME" ]; then
+            echo "ERROR: CNAME not found in out directory"
+            exit 1
+          fi
+          echo "✓ Build verification passed"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
